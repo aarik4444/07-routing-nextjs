@@ -1,24 +1,23 @@
-import Link from "next/link";
-import css from "./SidebarNotes.module.css";
+.menuList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 
-const tags = ["Todo", "Work", "Personal", "Meeting", "Shopping"];
+.menuItem {
+  margin-bottom: 16px;
+}
 
-export default function SidebarNotes() {
-  return (
-    <ul className={css.menuList}>
-      <li className={css.menuItem}>
-        <Link href="/notes/filter/all" className={css.menuLink}>
-          All notes
-        </Link>
-      </li>
+.menuLink {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  display: block;
+  padding: 8px 16px;
+  transition: background-color 0.3s ease;
+}
 
-      {tags.map((tag) => (
-        <li key={tag} className={css.menuItem}>
-          <Link href={`/notes/filter/${tag}`} className={css.menuLink}>
-            {tag}
-          </Link>
-        </li>
-      ))}
-    </ul>
-  );
+.menuLink:hover {
+  background-color: #444;
+  color: #ddd;
 }
